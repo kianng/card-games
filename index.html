@@ -77,29 +77,21 @@ a{color:var(--brass-soft)}
 .btn.danger:hover{border-color:var(--oxblood)}
 
 /* ---------- Hub ---------- */
-.hero{padding:38px 0 4px;text-align:left}
-.hero h1{font-size:54px;line-height:1.04;margin:0 0 14px;font-weight:600;letter-spacing:.005em}
-.hero h1 em{color:var(--brass-soft);font-style:italic;font-weight:500}
-.hero p{color:var(--muted);font-size:16px;line-height:1.6;max-width:56ch;margin:0}
-.orn-rule{display:flex;align-items:center;gap:12px;margin:26px 0 2px;max-width:340px}
-.orn-rule .ln{flex:1;border-top:1px solid var(--brass-dim);position:relative}
-.orn-rule .ln::after{content:"";position:absolute;left:0;right:0;top:3px;border-top:1px solid var(--brass-dim);opacity:.55}
-.orn-rule .dm{color:var(--brass);font-size:10px;line-height:1}
-.hub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
-.game-card{position:relative;background:var(--grain), linear-gradient(180deg,#1a1f16,#12150f);border:1px solid #333a2e;border-radius:10px;padding:24px 22px 22px;text-align:left;color:var(--ivory);display:flex;flex-direction:column;gap:9px;min-height:238px;transition:border-color .18s, transform .18s, box-shadow .18s;width:100%;box-shadow:0 14px 28px -18px rgba(0,0,0,.85), inset 0 1px 0 rgba(242,236,220,.05)}
+.hub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:6px;align-items:stretch}
+.game-card{position:relative;background:var(--grain), linear-gradient(180deg,#1a1f16,#12150f);border:1px solid #333a2e;border-radius:10px;padding:20px 22px 20px;text-align:left;color:var(--ivory);display:flex;flex-direction:column;gap:8px;min-height:0;height:100%;transition:border-color .18s, transform .18s, box-shadow .18s;width:100%;box-shadow:0 14px 28px -18px rgba(0,0,0,.85), inset 0 1px 0 rgba(242,236,220,.05)}
 .game-card::after{content:"";position:absolute;inset:5px;border:1px solid rgba(176,141,87,.22);border-radius:6px;pointer-events:none}
 .game-card:hover{border-color:var(--brass-deep);transform:translateY(-3px);box-shadow:0 20px 34px -18px rgba(0,0,0,.9), inset 0 1px 0 rgba(242,236,220,.05)}
-.game-card .numeral{position:absolute;top:16px;right:20px;font-family:var(--serif);font-style:italic;font-size:15px;color:var(--brass);letter-spacing:.06em}
-.game-card .suits{font-size:21px;letter-spacing:.32em;color:var(--brass-soft);line-height:1}
-.uno-suits{display:inline-flex;gap:9px;letter-spacing:0;padding-top:3px}
-.uno-suits .d{width:13px;height:13px;transform:rotate(45deg);border:1px solid rgba(247,241,224,.35);display:inline-block}
-.uno-suits .d.r{background:var(--uno-red)} .uno-suits .d.b{background:var(--uno-blue)} .uno-suits .d.g{background:var(--uno-green)} .uno-suits .d.y{background:var(--uno-yellow)}
-.game-card h2{font-size:31px;margin:4px 0 0;font-weight:600}
-.game-card p{color:var(--muted);font-size:14px;line-height:1.6;margin:0;flex:1}
-.game-card .meta{display:flex;gap:8px;flex-wrap:wrap}
-.tag{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass-soft);border:1px solid #3d4636;border-radius:999px;padding:5px 11px}
-.game-card .play{font-weight:600;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass-soft);border-top:1px solid #2c332a;padding-top:13px}
-.note{margin-top:22px;color:var(--muted2);font-size:13px;line-height:1.65;max-width:64ch}
+.gc-stage{position:relative;height:158px;border-radius:8px;background:radial-gradient(ellipse at 50% 45%, #1c4d33 0%, var(--felt) 55%, var(--felt-deep) 105%);box-shadow:inset 0 0 0 1px rgba(220,199,156,.3), inset 0 0 34px rgba(0,0,0,.5);overflow:hidden;margin-bottom:4px}
+.gc-stage .pcard,.gc-stage .uno-card{position:absolute;left:50%;top:54%;box-shadow:0 2px 3px rgba(0,0,0,.45), 0 14px 20px -8px rgba(0,0,0,.6);transition:transform .25s ease}
+.gc-stage .g1{transform:translate(-50%,-50%) translateX(-44px) rotate(-11deg)}
+.gc-stage .g2{transform:translate(-50%,-50%) translateX(0) translateY(-5px)}
+.gc-stage .g3{transform:translate(-50%,-50%) translateX(44px) rotate(11deg)}
+.game-card:hover .gc-stage .g1{transform:translate(-50%,-50%) translateX(-52px) rotate(-15deg)}
+.game-card:hover .gc-stage .g2{transform:translate(-50%,-50%) translateY(-10px)}
+.game-card:hover .gc-stage .g3{transform:translate(-50%,-50%) translateX(52px) rotate(15deg)}
+.game-card h2{font-size:29px;margin:2px 0 0;font-weight:600}
+.game-card .line{color:var(--muted);font-size:13.5px;margin:0}
+.game-card .play{font-weight:600;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass-soft);border-top:1px solid #2c332a;padding-top:12px;margin-top:auto}
 
 /* ---------- Game shell ---------- */
 .view{display:none}
@@ -117,7 +109,7 @@ a{color:var(--brass-soft)}
 .table>*{position:relative;z-index:1}
 .seat-label{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--felt-ink);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline}
 .seat-label .val{color:var(--brass-soft);letter-spacing:.05em;text-transform:none;font-size:13.5px;font-weight:600;font-variant-numeric:tabular-nums}
-.cards{display:flex;gap:9px;flex-wrap:wrap;min-height:100px;align-items:flex-start;margin-top:10px}
+.cards{display:flex;gap:9px;flex-wrap:wrap;min-height:112px;align-items:flex-start;margin-top:10px}
 .cards.center{justify-content:center}
 .msg{min-height:28px;text-align:center;font-family:var(--serif);font-style:italic;font-size:19px;font-weight:500;color:var(--brass-soft);padding:12px 6px 2px}
 .msg.small{font-family:var(--sans);font-style:normal;font-size:13px;color:#c9dcc4;font-weight:500;min-height:20px;padding:6px 4px 0}
@@ -153,7 +145,7 @@ details.rules b{color:var(--ivory)}
 .bet-chip:active{transform:translateY(1px)}
 
 /* ---------- Playing cards ---------- */
-.pcard{width:66px;height:95px;background:linear-gradient(155deg,#fbf6ea 0%, var(--paper) 58%, #efe6d0 100%);color:var(--suit-black);border:1px solid var(--paper-edge);border-radius:8px;box-shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 20px -9px rgba(0,0,0,.6);position:relative;flex:none}
+.pcard{width:76px;height:109px;background:linear-gradient(155deg,#fbf6ea 0%, var(--paper) 58%, #efe6d0 100%);color:var(--suit-black);border:1px solid var(--paper-edge);border-radius:8px;box-shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 20px -9px rgba(0,0,0,.6);position:relative;flex:none}
 .pcard::after{content:"";position:absolute;inset:3px;border:1px solid rgba(112,90,50,.34);border-radius:5px;pointer-events:none}
 .pcard.red{color:var(--suit-red)}
 .pcard .idx{position:absolute;top:4px;left:5px;display:flex;flex-direction:column;align-items:center;line-height:1;z-index:2;width:13.5px}
@@ -161,12 +153,12 @@ details.rules b{color:var(--ivory)}
 .pcard .idx .r.ten{font-size:11px;letter-spacing:-.02em}
 .pcard .idx .s{font-size:9px;margin-top:1px}
 .pcard .idx.b{top:auto;left:auto;bottom:4px;right:5px;transform:rotate(180deg)}
-.pcard .pips{position:absolute;top:20px;bottom:20px;left:16px;right:16px}
-.pcard .pip{position:absolute;transform:translate(-50%,-50%);font-size:13px;line-height:1}
+.pcard .pips{position:absolute;top:23px;bottom:23px;left:19px;right:19px}
+.pcard .pip{position:absolute;transform:translate(-50%,-50%);font-size:15px;line-height:1}
 .pcard .pip[data-flip="1"]{transform:translate(-50%,-50%) rotate(180deg)}
-.pcard .pip.ace{left:50%;top:50%;font-size:38px}
-.pcard .pip.c{left:50%;top:50%;font-size:25px}
-.pcard .court{position:absolute;inset:19px 17px;border:1px solid rgba(112,90,50,.5);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px}
+.pcard .pip.ace{left:50%;top:50%;font-size:44px}
+.pcard .pip.c{left:50%;top:50%;font-size:29px}
+.pcard .court{position:absolute;inset:22px 20px;border:1px solid rgba(112,90,50,.5);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px}
 .pcard .court::before{content:"";position:absolute;inset:2.5px;border:1px solid rgba(112,90,50,.38);pointer-events:none}
 .pcard .court-r{font-family:var(--serif);font-size:25px;font-weight:600;line-height:1}
 .pcard .court-s{font-size:9.5px;line-height:1}
@@ -185,6 +177,20 @@ details.rules b{color:var(--ivory)}
 .pcard.small .idx.b{bottom:3.5px;right:4.5px}
 .pcard.small .pip.c{font-size:17px}
 .pcard.small::after{inset:2.5px;border-radius:4px}
+.pcard.big{width:96px;height:138px;border-radius:10px}
+.pcard.big .idx{top:6px;left:7px;width:17px}
+.pcard.big .idx .r{font-size:19px}
+.pcard.big .idx .r.ten{font-size:14px}
+.pcard.big .idx .s{font-size:12px}
+.pcard.big .idx.b{bottom:6px;right:7px}
+.pcard.big .pips{top:26px;bottom:26px;left:21px;right:21px}
+.pcard.big .pip{font-size:17px}
+.pcard.big .pip.ace{font-size:50px}
+.pcard.big .pip.c{font-size:33px}
+.pcard.big .court{inset:25px 22px}
+.pcard.big .court-r{font-size:33px}
+.pcard.big .court-s{font-size:12px}
+.pcard.big::after{inset:4px;border-radius:7px}
 .pcard.dim{opacity:.45}
 .pcard.deal{animation:dealIn .38s cubic-bezier(.22,.8,.3,1) both}
 @keyframes dealIn{from{opacity:0;transform:translateY(-13px) rotate(-2.4deg)}to{opacity:1;transform:translateY(0) rotate(0deg)}}
@@ -204,10 +210,10 @@ details.rules b{color:var(--ivory)}
 .winner-banner{text-align:center;font-family:var(--serif);font-size:26px;font-weight:600;color:var(--brass-soft);padding:8px 0 0;line-height:1.2}
 
 /* ---------- UNO ---------- */
-.uno-card{width:64px;height:93px;border-radius:9px;border:1px solid rgba(247,241,224,.8);color:#f7f1e0;font-weight:700;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 20px -9px rgba(0,0,0,.6);flex:none;padding:4px;position:relative;overflow:hidden}
+.uno-card{width:74px;height:107px;border-radius:9px;border:1px solid rgba(247,241,224,.8);color:#f7f1e0;font-weight:700;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 20px -9px rgba(0,0,0,.6);flex:none;padding:4px;position:relative;overflow:hidden}
 .uno-card::before{content:"";position:absolute;left:50%;top:50%;width:80%;height:57%;background:linear-gradient(155deg,#fbf6ea,#efe6d0);border-radius:50%;transform:translate(-50%,-50%) rotate(-18deg);box-shadow:inset 0 0 0 1px rgba(112,90,50,.25)}
 .uno-card::after{content:"";position:absolute;inset:3px;border:1px solid rgba(247,241,224,.4);border-radius:6px;pointer-events:none}
-.uno-card .n{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:1;font-family:var(--serif);font-size:31px;font-weight:700;line-height:1;text-align:center}
+.uno-card .n{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:1;font-family:var(--serif);font-size:36px;font-weight:700;line-height:1;text-align:center}
 .uno-card .t{position:absolute;z-index:1;bottom:7px;left:0;right:0;font-size:8.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;text-align:center;line-height:1.25;color:rgba(247,241,224,.92)}
 .uno-card .cnr{position:absolute;z-index:1;font-family:var(--serif);font-size:12px;font-weight:700;line-height:1;color:rgba(247,241,224,.95)}
 .uno-card .cnr.tl{top:6px;left:7px}
@@ -222,7 +228,11 @@ button.uno-card{cursor:pointer;transition:transform .16s, box-shadow .16s}
 button.uno-card.playable{box-shadow:0 0 0 2px var(--brass), 0 16px 22px -9px rgba(0,0,0,.65);transform:translateY(-7px)}
 button.uno-card:disabled{cursor:default}
 .uno-hand{display:flex;gap:9px;flex-wrap:wrap;justify-content:center;margin-top:12px}
-.uno-pile{width:64px;height:93px;border-radius:9px;background:
+.uno-card.big{width:96px;height:138px;border-radius:11px}
+.uno-card.big .n{font-size:42px}
+.uno-card.big .cnr{font-size:16px}
+.uno-card.big .t{font-size:10.5px;bottom:10px}
+.uno-pile{width:74px;height:107px;border-radius:9px;background:
   repeating-linear-gradient(45deg, rgba(200,168,106,.16) 0 1px, rgba(0,0,0,0) 1px 9px),
   repeating-linear-gradient(-45deg, rgba(200,168,106,.16) 0 1px, rgba(0,0,0,0) 1px 9px),
   linear-gradient(160deg,#22271f,#171b14);
@@ -235,19 +245,97 @@ button.uno-card:disabled{cursor:default}
 .hand-count{display:flex;gap:3px;flex-wrap:wrap;margin-top:7px}
 .mini-back{width:16px;height:24px;border-radius:3px;background:repeating-linear-gradient(45deg,#22392e 0 4px,#182b21 4px 8px);border:1px solid rgba(216,200,148,.75)}
 
+/* ---------- Baccarat ---------- */
+.road{display:flex;gap:5px;flex-wrap:wrap;justify-content:center;margin-top:12px;min-height:22px}
+.road-dot{width:22px;height:22px;border-radius:50%;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;border:1px solid;flex:none}
+.road-dot.p{background:#33526e;color:#dcebf7;border-color:#6486a3}
+.road-dot.b{background:#7e2a30;color:#f6dcd8;border-color:#a85a60}
+.road-dot.t{background:#2f5d43;color:#dcf0dd;border-color:#5d8f6e}
+.seg{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+.seg .btn.sel{background:#ac8a52;color:#20180a;border-color:#7d6234;box-shadow:0 2px 0 #5e4823, inset 0 1px 0 rgba(255,246,220,.35)}
+
+/* ---------- Gin Rummy ---------- */
+.card-btn{background:none;border:none;padding:0;min-height:0;cursor:pointer;border-radius:8px}
+.card-btn .pcard{transition:transform .15s, box-shadow .15s}
+.card-btn:hover:not(:disabled) .pcard{transform:translateY(-5px)}
+.card-btn:disabled{cursor:default}
+.card-btn .pcard.inmeld{box-shadow:0 0 0 2px rgba(176,141,87,.55), 0 12px 20px -9px rgba(0,0,0,.6)}
+.card-btn.blocked .pcard{opacity:.5}
+.gin-hand{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:12px;min-height:112px}
+.gin-piles{display:flex;gap:20px;justify-content:center;align-items:flex-start}
+.pile-wrap{text-align:center}
+.pile-btn{background:none;border:none;padding:0;min-height:0;cursor:pointer;border-radius:8px}
+.pile-btn:disabled{cursor:default}
+.pile-btn .pcard{transition:transform .15s, box-shadow .15s}
+.pile-btn.glow .pcard{box-shadow:0 0 0 2px var(--brass), 0 14px 22px -9px rgba(0,0,0,.65)}
+.pile-btn.glow:hover .pcard{transform:translateY(-3px)}
+.score-line{text-align:center;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--felt-ink);margin-bottom:8px}
+.score-line b{color:var(--brass-soft);font-family:var(--serif);font-size:19px;letter-spacing:.03em;margin:0 2px;font-variant-numeric:tabular-nums}
+
+/* ---------- Solitaire ---------- */
+.sol-top{display:flex;gap:10px;align-items:flex-start}
+.sol-found{margin-left:auto;display:flex;gap:10px}
+.sol-slot{width:76px;height:109px;border-radius:8px;border:1.5px dashed rgba(220,199,156,.38);display:flex;align-items:center;justify-content:center;font-size:27px;color:rgba(220,199,156,.42);flex:none;background:rgba(0,0,0,.16);padding:0;min-height:0}
+button.sol-slot{cursor:pointer}
+.sol-slot.red{color:rgba(205,130,130,.5);border-color:rgba(205,130,130,.32)}
+.sol-pile{background:none;border:none;padding:0;min-height:0;cursor:pointer;border-radius:8px}
+.sol-pile .pcard{transition:transform .15s, box-shadow .15s}
+.sol-tableau{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:18px}
+.sol-col{display:flex;flex-direction:column;align-items:center;min-height:109px;border-radius:8px;padding:0}
+.sol-card{margin-top:-79px;flex:none;cursor:pointer;border-radius:8px}
+.sol-card:first-child{margin-top:0}
+.sol-card.down{margin-top:-93px;cursor:default}
+.sol-card.sel .pcard{box-shadow:0 0 0 2px var(--brass), 0 14px 22px -9px rgba(0,0,0,.65)}
+.sol-card .pcard{transition:box-shadow .15s}
+@media (max-width:760px){
+  .sol-tableau .pcard,.sol-top .pcard,.sol-top .sol-slot,.sol-tableau .sol-slot{width:44px;height:63px;border-radius:5px}
+  .sol-top .sol-slot,.sol-tableau .sol-slot{font-size:17px}
+  .sol-tableau .pcard::after,.sol-top .pcard::after{inset:2px;border-radius:3px}
+  .sol-tableau .pcard .idx,.sol-top .pcard .idx{top:2.5px;left:3.5px;width:10px}
+  .sol-tableau .pcard .idx .r,.sol-top .pcard .idx .r{font-size:10.5px}
+  .sol-tableau .pcard .idx .r.ten,.sol-top .pcard .idx .r.ten{font-size:8px}
+  .sol-tableau .pcard .idx .s,.sol-top .pcard .idx .s{font-size:7px}
+  .sol-tableau .pcard .idx.b,.sol-top .pcard .idx.b{bottom:2.5px;right:3.5px}
+  .sol-tableau .pcard .pips,.sol-top .pcard .pips{top:14px;bottom:14px;left:10px;right:10px}
+  .sol-tableau .pcard .pip,.sol-top .pcard .pip{font-size:8px}
+  .sol-tableau .pcard .pip.ace,.sol-top .pcard .pip.ace{font-size:21px}
+  .sol-tableau .pcard .court,.sol-top .pcard .court{inset:13px 11px}
+  .sol-tableau .pcard .court-r,.sol-top .pcard .court-r{font-size:13px}
+  .sol-tableau .pcard .court-s,.sol-top .pcard .court-s{font-size:6.5px}
+  .sol-col{min-height:63px}
+  .sol-card{margin-top:-37px}
+  .sol-card.down{margin-top:-49px}
+  .gin-hand{gap:6px}
+}
+
 @media (max-width:760px){
   .hub-grid{grid-template-columns:1fr}
   .game-card{min-height:0}
-  .hero{padding-top:28px}
-  .hero h1{font-size:38px}
+  .pcard.big{width:76px;height:109px}
+  .pcard.big .idx{top:4px;left:5px;width:13.5px}
+  .pcard.big .idx .r{font-size:14px}
+  .pcard.big .idx .r.ten{font-size:11px}
+  .pcard.big .idx .s{font-size:9px}
+  .pcard.big .idx.b{bottom:4px;right:5px}
+  .pcard.big .pips{top:20px;bottom:20px;left:16px;right:16px}
+  .pcard.big .pip{font-size:13px}
+  .pcard.big .pip.ace{font-size:38px}
+  .pcard.big .pip.c{font-size:25px}
+  .pcard.big .court{inset:19px 17px}
+  .pcard.big .court-r{font-size:25px}
+  .pcard.big .court-s{font-size:9.5px}
+  .uno-card.big{width:76px;height:109px}
+  .uno-card.big .n{font-size:31px}
+  .uno-card.big .cnr{font-size:12px}
+  .uno-card.big .t{font-size:8.5px;bottom:7px}
   .opp-row{grid-template-columns:1fr}
   .table{padding:30px 17px 24px;border-radius:19px}
   .table::before{inset:10px;border-radius:12px}
-  .pcard{width:57px;height:83px}
-  .pcard .pips{top:18px;bottom:18px;left:14px;right:14px}
-  .pcard .pip{font-size:11.5px}
-  .pcard .pip.ace{font-size:33px}
-  .pcard .court{inset:17px 15px}
+  .pcard{width:62px;height:90px}
+  .pcard .pips{top:20px;bottom:20px;left:15px;right:15px}
+  .pcard .pip{font-size:12.5px}
+  .pcard .pip.ace{font-size:36px}
+  .pcard .court{inset:18px 16px}
   .pcard .court-r{font-size:21px}
   .pcard .court-s{font-size:8.5px}
   .pcard .idx{top:3.5px;left:4.5px;width:13px}
@@ -255,9 +343,9 @@ button.uno-card:disabled{cursor:default}
   .pcard .idx .r{font-size:13px}
   .pcard .idx .r.ten{font-size:9.5px}
   .pcard .idx .s{font-size:8px}
-  .uno-card{width:57px;height:83px}
-  .uno-card .n{font-size:27px}
-  .uno-pile{width:57px;height:83px}
+  .uno-card{width:62px;height:90px}
+  .uno-card .n{font-size:30px}
+  .uno-pile{width:62px;height:90px}
   .brand .sub{display:none}
   .game-head h2{font-size:30px}
   .msg{font-size:17px}
@@ -270,7 +358,7 @@ button.uno-card:disabled{cursor:default}
 <div class="wrap">
 
   <div class="topbar">
-    <div class="brand"><span class="mark">Card <em>Games</em></span><span class="sub">Blackjack · Hold'em · Uno</span></div>
+    <div class="brand"><span class="mark">Card <em>Games</em></span><span class="sub">Private card room</span></div>
     <div class="wallet">
       <div class="chip-stack"><span class="chip-ico" aria-hidden="true"></span><div><b id="walletAmt">2,500</b><br><span>Chips</span></div></div>
       <button class="btn small gold" id="topUpBtn">+ 1,000 free</button>
@@ -280,44 +368,74 @@ button.uno-card:disabled{cursor:default}
 
   <!-- HUB -->
   <section class="view active" id="view-hub">
-    <div class="hero">
-      <h1>Three tables.<br><em>No small talk.</em></h1>
-      <p>A quiet set of card games for yourself — blackjack against the house, no-limit Texas Hold'em against three regulars, and Uno against three opponents who play to win. One shared chip wallet for the two casino tables; Uno is just for pride.</p>
-      <div class="orn-rule" aria-hidden="true"><span class="ln"></span><span class="dm">◆</span><span class="ln"></span></div>
-    </div>
     <div class="hub-grid">
       <button class="game-card" data-goto="blackjack">
-        <span class="numeral" aria-hidden="true">No. I</span>
-        <span class="suits" aria-hidden="true">♠ ♥</span>
+        <span class="gc-stage" aria-hidden="true">
+          <span class="pcard g1"><span class="idx"><span class="r">A</span><span class="s">♠</span></span><span class="pips"><span class="pip ace">♠</span></span><span class="idx b"><span class="r">A</span><span class="s">♠</span></span></span>
+          <span class="pcard red g2"><span class="idx"><span class="r">K</span><span class="s">♥</span></span><span class="court"><span class="court-s">♥</span><span class="court-r">K</span><span class="court-s">♥</span></span><span class="idx b"><span class="r">K</span><span class="s">♥</span></span></span>
+          <span class="pcard back g3"></span>
+        </span>
         <h2>Blackjack</h2>
-        <p>Classic 21 against the dealer. Blackjack pays 3:2, dealer stands on all 17s, double down on any first two cards.</p>
-        <span class="meta"><span class="tag">Vs the house</span><span class="tag">Chips</span></span>
+        <p class="line">You vs the dealer · pays 3:2</p>
         <span class="play">Take a seat →</span>
       </button>
       <button class="game-card" data-goto="holdem">
-        <span class="numeral" aria-hidden="true">No. II</span>
-        <span class="suits" aria-hidden="true">♣ ♦</span>
+        <span class="gc-stage" aria-hidden="true">
+          <span class="pcard red g1"><span class="idx"><span class="r">Q</span><span class="s">♦</span></span><span class="court"><span class="court-s">♦</span><span class="court-r">Q</span><span class="court-s">♦</span></span><span class="idx b"><span class="r">Q</span><span class="s">♦</span></span></span>
+          <span class="pcard red g2"><span class="idx"><span class="r">Q</span><span class="s">♥</span></span><span class="court"><span class="court-s">♥</span><span class="court-r">Q</span><span class="court-s">♥</span></span><span class="idx b"><span class="r">Q</span><span class="s">♥</span></span></span>
+          <span class="pcard g3"><span class="idx"><span class="r ten">10</span><span class="s">♣</span></span><span class="pips"><span class="pip" style="left:26%;top:16%">♣</span><span class="pip" style="left:74%;top:16%">♣</span><span class="pip" style="left:50%;top:29%">♣</span><span class="pip" style="left:26%;top:42%">♣</span><span class="pip" style="left:74%;top:42%">♣</span><span class="pip" style="left:26%;top:58%" data-flip="1">♣</span><span class="pip" style="left:74%;top:58%" data-flip="1">♣</span><span class="pip" style="left:50%;top:71%" data-flip="1">♣</span><span class="pip" style="left:26%;top:84%" data-flip="1">♣</span><span class="pip" style="left:74%;top:84%" data-flip="1">♣</span></span><span class="idx b"><span class="r ten">10</span><span class="s">♣</span></span></span>
+        </span>
         <h2>Texas Hold'em</h2>
-        <p>No-limit Hold'em, four-handed. You plus Ava, Marcus, and June — blinds 10 / 20, full betting rounds from flop to river.</p>
-        <span class="meta"><span class="tag">You + 3 AI</span><span class="tag">Chips</span></span>
+        <p class="line">You + Ava, Marcus &amp; June</p>
+        <span class="play">Take a seat →</span>
+      </button>
+      <button class="game-card" data-goto="baccarat">
+        <span class="gc-stage" aria-hidden="true">
+          <span class="pcard g1"><span class="idx"><span class="r">9</span><span class="s">♠</span></span><span class="pips"><span class="pip" style="left:26%;top:16%">♠</span><span class="pip" style="left:74%;top:16%">♠</span><span class="pip" style="left:26%;top:42%">♠</span><span class="pip" style="left:74%;top:42%">♠</span><span class="pip" style="left:50%;top:50%">♠</span><span class="pip" style="left:26%;top:58%" data-flip="1">♠</span><span class="pip" style="left:74%;top:58%" data-flip="1">♠</span><span class="pip" style="left:26%;top:84%" data-flip="1">♠</span><span class="pip" style="left:74%;top:84%" data-flip="1">♠</span></span><span class="idx b"><span class="r">9</span><span class="s">♠</span></span></span>
+          <span class="pcard red g2"><span class="idx"><span class="r">9</span><span class="s">♥</span></span><span class="pips"><span class="pip" style="left:26%;top:16%">♥</span><span class="pip" style="left:74%;top:16%">♥</span><span class="pip" style="left:26%;top:42%">♥</span><span class="pip" style="left:74%;top:42%">♥</span><span class="pip" style="left:50%;top:50%">♥</span><span class="pip" style="left:26%;top:58%" data-flip="1">♥</span><span class="pip" style="left:74%;top:58%" data-flip="1">♥</span><span class="pip" style="left:26%;top:84%" data-flip="1">♥</span><span class="pip" style="left:74%;top:84%" data-flip="1">♥</span></span><span class="idx b"><span class="r">9</span><span class="s">♥</span></span></span>
+          <span class="pcard back g3"></span>
+        </span>
+        <h2>Baccarat</h2>
+        <p class="line">Player, Banker or Tie · closest to 9</p>
+        <span class="play">Take a seat →</span>
+      </button>
+      <button class="game-card" data-goto="gin">
+        <span class="gc-stage" aria-hidden="true">
+          <span class="pcard red g1"><span class="idx"><span class="r">7</span><span class="s">♥</span></span><span class="pips"><span class="pip" style="left:26%;top:16%">♥</span><span class="pip" style="left:74%;top:16%">♥</span><span class="pip" style="left:50%;top:29%">♥</span><span class="pip" style="left:26%;top:50%">♥</span><span class="pip" style="left:74%;top:50%">♥</span><span class="pip" style="left:26%;top:84%" data-flip="1">♥</span><span class="pip" style="left:74%;top:84%" data-flip="1">♥</span></span><span class="idx b"><span class="r">7</span><span class="s">♥</span></span></span>
+          <span class="pcard red g2"><span class="idx"><span class="r">8</span><span class="s">♥</span></span><span class="pips"><span class="pip" style="left:26%;top:16%">♥</span><span class="pip" style="left:74%;top:16%">♥</span><span class="pip" style="left:50%;top:29%">♥</span><span class="pip" style="left:26%;top:50%">♥</span><span class="pip" style="left:74%;top:50%">♥</span><span class="pip" style="left:50%;top:71%" data-flip="1">♥</span><span class="pip" style="left:26%;top:84%" data-flip="1">♥</span><span class="pip" style="left:74%;top:84%" data-flip="1">♥</span></span><span class="idx b"><span class="r">8</span><span class="s">♥</span></span></span>
+          <span class="pcard red g3"><span class="idx"><span class="r">9</span><span class="s">♥</span></span><span class="pips"><span class="pip" style="left:26%;top:16%">♥</span><span class="pip" style="left:74%;top:16%">♥</span><span class="pip" style="left:26%;top:42%">♥</span><span class="pip" style="left:74%;top:42%">♥</span><span class="pip" style="left:50%;top:50%">♥</span><span class="pip" style="left:26%;top:58%" data-flip="1">♥</span><span class="pip" style="left:74%;top:58%" data-flip="1">♥</span><span class="pip" style="left:26%;top:84%" data-flip="1">♥</span><span class="pip" style="left:74%;top:84%" data-flip="1">♥</span></span><span class="idx b"><span class="r">9</span><span class="s">♥</span></span></span>
+        </span>
+        <h2>Gin Rummy</h2>
+        <p class="line">You vs Ava · meld, knock, gin</p>
+        <span class="play">Take a seat →</span>
+      </button>
+      <button class="game-card" data-goto="solitaire">
+        <span class="gc-stage" aria-hidden="true">
+          <span class="pcard g1"><span class="idx"><span class="r">A</span><span class="s">♠</span></span><span class="pips"><span class="pip ace">♠</span></span><span class="idx b"><span class="r">A</span><span class="s">♠</span></span></span>
+          <span class="pcard red g2"><span class="idx"><span class="r">K</span><span class="s">♥</span></span><span class="court"><span class="court-s">♥</span><span class="court-r">K</span><span class="court-s">♥</span></span><span class="idx b"><span class="r">K</span><span class="s">♥</span></span></span>
+          <span class="pcard g3"><span class="idx"><span class="r">Q</span><span class="s">♣</span></span><span class="court"><span class="court-s">♣</span><span class="court-r">Q</span><span class="court-s">♣</span></span><span class="idx b"><span class="r">Q</span><span class="s">♣</span></span></span>
+        </span>
+        <h2>Solitaire</h2>
+        <p class="line">Classic Klondike · just you</p>
         <span class="play">Take a seat →</span>
       </button>
       <button class="game-card" data-goto="uno">
-        <span class="numeral" aria-hidden="true">No. III</span>
-        <span class="suits uno-suits" aria-hidden="true"><i class="d r"></i><i class="d g"></i><i class="d b"></i><i class="d y"></i></span>
+        <span class="gc-stage" aria-hidden="true">
+          <span class="uno-card blue g1"><span class="cnr tl">5</span><span class="n">5</span><span class="cnr br">5</span></span>
+          <span class="uno-card red g2"><span class="cnr tl">7</span><span class="n">7</span><span class="cnr br">7</span></span>
+          <span class="uno-card wild g3"><span class="cnr tl">W</span><span class="n">W</span><span class="t">Wild</span><span class="cnr br">W</span></span>
+        </span>
         <h2>Uno</h2>
-        <p>The classic shedding game, muted. Match color or number, deploy skips and reverses, and empty your hand first.</p>
-        <span class="meta"><span class="tag">You + 3 AI</span><span class="tag">No chips</span></span>
+        <p class="line">You + 3 AI · no chips, just pride</p>
         <span class="play">Take a seat →</span>
       </button>
     </div>
-    <p class="note">Chips are play money — they never run dry. Tap “+ 1,000 free” any time your stack gets low. Nothing here is saved between visits; each session starts fresh at 2,500.</p>
   </section>
 
   <!-- BLACKJACK -->
   <section class="view" id="view-blackjack">
     <div class="game-head">
-      <div><h2>Blackjack</h2><div class="desc">Blackjack pays 3:2 · Dealer stands on all 17s · Six-deck shoe</div></div>
+      <div><h2>Blackjack</h2><div class="desc">Pays 3:2 · Dealer stands on 17</div></div>
       <button class="btn back-btn" data-goto="hub">‹ All games</button>
     </div>
     <div class="table">
@@ -342,26 +460,18 @@ button.uno-card:disabled{cursor:default}
       </div>
       <div class="controls" id="bjAgainControls" style="display:none"><button class="btn gold" id="bjAgainBtn">New hand</button></div>
     </div>
-    <details class="rules"><summary>How it works</summary>
-      <ul>
-        <li>Beat the dealer's hand without going over 21. Face cards count 10; aces count 11 unless that busts you, then 1.</li>
-        <li>A two-card 21 (blackjack) pays 3:2. Dealer peeks and stands on all 17s.</li>
-        <li><b>Double</b> doubles your bet, takes exactly one more card, then stands.</li>
-        <li>Ties push — your bet comes back.</li>
-      </ul>
-    </details>
   </section>
 
   <!-- HOLDEM -->
   <section class="view" id="view-holdem">
     <div class="game-head">
-      <div><h2>Texas Hold'em</h2><div class="desc">No-limit · Four-handed · Blinds 10 / 20 · Your stack is your chip wallet</div></div>
+      <div><h2>Texas Hold'em</h2><div class="desc">No-limit · Blinds 10 / 20</div></div>
       <button class="btn back-btn" data-goto="hub">‹ All games</button>
     </div>
     <div class="table">
       <div class="opp-row" id="heOpps"></div>
       <div class="pot-line">Pot <b id="hePot">0</b> &nbsp;·&nbsp; <span id="heStage">Waiting to deal</span></div>
-      <div class="cards center" id="heBoard" style="min-height:96px"></div>
+      <div class="cards center" id="heBoard" style="min-height:112px"></div>
       <div class="msg" id="heMsg">Tap “Deal hand” to start.</div>
       <div class="winner-banner" id="heBanner"></div>
       <div class="player-zone" id="hePlayerZone">
@@ -376,20 +486,12 @@ button.uno-card:disabled{cursor:default}
         <button class="btn" id="heRaiseBigBtn">Raise +150</button>
       </div>
     </div>
-    <details class="rules"><summary>How it works</summary>
-      <ul>
-        <li>Two hole cards each. Five community cards arrive as flop (3), turn (1), river (1). Best five-card hand wins the pot.</li>
-        <li>Blinds are 10 / 20 and rotate each hand. Raises are fixed steps of +50 or +150 over the current bet — a simplified no-limit.</li>
-        <li>Ava plays tight, Marcus plays loose and bluffs, June is steady. Their stacks refill to 1,000 when they go broke; yours is your shared wallet.</li>
-        <li>Simplification: no side pots — if a short stack is all-in, they contest the whole pot.</li>
-      </ul>
-    </details>
   </section>
 
   <!-- UNO -->
   <section class="view" id="view-uno">
     <div class="game-head">
-      <div><h2>Uno</h2><div class="desc">You + 3 AI · Match color, number, or symbol · First to empty their hand wins</div></div>
+      <div><h2>Uno</h2><div class="desc">You + 3 AI · First to empty their hand wins</div></div>
       <button class="btn back-btn" data-goto="hub">‹ All games</button>
     </div>
     <div class="table">
@@ -412,14 +514,94 @@ button.uno-card:disabled{cursor:default}
       <div class="controls" id="unoStartControls"><button class="btn gold" id="unoStartBtn">Start game</button></div>
       <div class="controls" id="unoPlayControls" style="display:none"><button class="btn" id="unoPassBtn">Pass turn</button><button class="btn gold" id="unoAgainBtn" style="display:none">Play again</button></div>
     </div>
-    <details class="rules"><summary>How it works</summary>
-      <ul>
-        <li>Play a card that matches the top card's color, number, or symbol — or any Wild. Glowing cards in your hand are playable.</li>
-        <li><b>Skip</b> jumps the next player · <b>Reverse</b> flips direction · <b>+2</b> makes the next player draw two and lose their turn · <b>Wild +4</b> does the same with four.</li>
-        <li>No match? Tap the draw pile for one card. If it plays, you can use it right away; otherwise tap Pass.</li>
-        <li>First to play their last card wins the round.</li>
-      </ul>
-    </details>
+  </section>
+
+  <!-- BACCARAT -->
+  <section class="view" id="view-baccarat">
+    <div class="game-head">
+      <div><h2>Baccarat</h2><div class="desc">Punto Banco · Closest to 9 wins</div></div>
+      <button class="btn back-btn" data-goto="hub">‹ All games</button>
+    </div>
+    <div class="table">
+      <div class="seat-label"><span>Banker</span><span class="val" id="bacBankerVal"></span></div>
+      <div class="cards" id="bacBankerCards"></div>
+      <div class="msg" id="bacMsg">Pick a side, place your bet, then deal.</div>
+      <div class="road" id="bacRoad"></div>
+      <div class="divider"></div>
+      <div class="seat-label"><span>Player</span><span class="val" id="bacPlayerVal"></span></div>
+      <div class="cards" id="bacPlayerCards"></div>
+      <div class="seg" id="bacSeg">
+        <button class="btn sel" data-side="player">Player · 1:1</button>
+        <button class="btn" data-side="banker">Banker · 19:20</button>
+        <button class="btn" data-side="tie">Tie · 8:1</button>
+      </div>
+      <div class="bet-row" id="bacBetRow">
+        <button class="bet-chip c10" data-bbet="10">10</button>
+        <button class="bet-chip c25 sel" data-bbet="25">25</button>
+        <button class="bet-chip c100" data-bbet="100">100</button>
+        <button class="bet-chip c500" data-bbet="500">500</button>
+        <span class="bet-amt">Bet <b id="bacBetAmt">25</b></span>
+      </div>
+      <div class="controls" id="bacDealControls"><button class="btn gold" id="bacDealBtn">Deal</button></div>
+      <div class="controls" id="bacAgainControls" style="display:none"><button class="btn gold" id="bacAgainBtn">New hand</button></div>
+    </div>
+  </section>
+
+  <!-- GIN RUMMY -->
+  <section class="view" id="view-gin">
+    <div class="game-head">
+      <div><h2>Gin Rummy</h2><div class="desc">You vs Ava · Knock at 10 · First to 100</div></div>
+      <button class="btn back-btn" data-goto="hub">‹ All games</button>
+    </div>
+    <div class="table">
+      <div class="score-line" id="ginScore">You <b>0</b> · Ava <b>0</b></div>
+      <div class="opp" id="ginAiBox">
+        <div class="nm">Ava <span id="ginAiCount"></span></div>
+        <div class="st" id="ginAiStatus"></div>
+        <div class="hand-count" id="ginAiBacks"></div>
+        <div class="cards" id="ginAiCards" style="min-height:0;display:none"></div>
+      </div>
+      <div class="gin-piles" style="margin-top:16px">
+        <div class="pile-wrap"><button class="pile-btn" id="ginStockBtn" aria-label="Draw from stock"></button><div class="msg small" id="ginStockCount"></div></div>
+        <div class="pile-wrap"><button class="pile-btn" id="ginDiscardBtn" aria-label="Take the discard"></button><div class="msg small">Discard</div></div>
+      </div>
+      <div class="msg" id="ginMsg">Tap “Start match” to deal the first round.</div>
+      <div class="winner-banner" id="ginBanner"></div>
+      <div class="divider"></div>
+      <div class="seat-label"><span>Your hand</span><span class="val" id="ginInfo"></span></div>
+      <div class="gin-hand" id="ginHand"></div>
+      <div class="controls" id="ginStartControls"><button class="btn gold" id="ginStartBtn">Start match</button></div>
+      <div class="controls" id="ginPlayControls" style="display:none">
+        <button class="btn" id="ginKnockBtn" style="display:none">Knock</button>
+        <button class="btn gold" id="ginGinBtn" style="display:none">Gin!</button>
+        <button class="btn gold" id="ginNextBtn" style="display:none">Next round</button>
+        <button class="btn" id="ginNewMatchBtn" style="display:none">New match</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLITAIRE -->
+  <section class="view" id="view-solitaire">
+    <div class="game-head">
+      <div><h2>Solitaire</h2><div class="desc">Klondike · Draw one · No chips, just you</div></div>
+      <button class="btn back-btn" data-goto="hub">‹ All games</button>
+    </div>
+    <div class="table sol-area">
+      <div class="sol-top">
+        <button class="sol-pile" id="solStockBtn" aria-label="Stock — tap to draw"></button>
+        <button class="sol-pile" id="solWaste" aria-label="Waste pile"></button>
+        <div class="sol-found" id="solFoundations"></div>
+      </div>
+      <div class="msg" id="solMsg">Build down in alternating colours. Aces start the foundations.</div>
+      <div class="winner-banner" id="solBanner"></div>
+      <div class="sol-tableau" id="solTableau"></div>
+      <div class="controls">
+        <button class="btn gold" id="solNewBtn">New game</button>
+        <button class="btn" id="solUndoBtn">Undo</button>
+        <button class="btn" id="solAutoBtn" style="display:none">Auto-finish</button>
+      </div>
+      <div class="msg small" id="solStats"></div>
+    </div>
   </section>
 
 </div>
@@ -973,7 +1155,7 @@ function unoRender(){
   if (uno.discard.length) topEl.appendChild(unoCardEl(unoTop(), false, null));
   document.getElementById("unoDeckCount").textContent = uno.started ? (uno.deck.length + " cards left") : "";
   var colorNames = { red:"Red", blue:"Blue", green:"Green", yellow:"Yellow" };
-  document.getElementById("unoColorLine").innerHTML = uno.started ? ('<span class="color-dot" style="background:'+({red:"#93333a",blue:"#33526e",green:"#2f5d43",yellow:"#bd9435"})[uno.color]+'"></span>Current color: ' + colorNames[uno.color] + ' · Direction: ' + (uno.dir===1?"clockwise":"counter-clockwise")) : "";
+  document.getElementById("unoColorLine").innerHTML = uno.started ? ('<span class="color-dot" style="background:'+({red:"#93333a",blue:"#33526e",green:"#2f5d43",yellow:"#bd9435"})[uno.color]+'"></span>' + colorNames[uno.color] + ' · ' + (uno.dir===1?"Clockwise":"Counter-clockwise")) : "";
   document.getElementById("unoTurnLine").textContent = !uno.started ? "" : (uno.over ? "Round over" : (uno.turn===0 ? "Your turn" : unoPlayerName(uno.turn) + "’s turn"));
   var hand = document.getElementById("unoHand"); hand.innerHTML = "";
   var myTurn = uno.started && !uno.over && uno.turn===0 && !uno.busy;
@@ -1089,5 +1271,619 @@ document.querySelectorAll("#unoColorPick button").forEach(function(b){
 });
 unoRender();
 </script>
+<script>
+"use strict";
+/* ================= BACCARAT ================= */
+var bac = { deck:[], player:[], banker:[], bet:25, wager:0, side:"player", phase:"betting", road:[] };
+function bacPoint(c){ return c.val > 9 ? 0 : c.val; }
+function bacVal(hand){ var t = 0; hand.forEach(function(c){ t += bacPoint(c); }); return t % 10; }
+function bacMsg(t){ document.getElementById("bacMsg").textContent = t; }
+function bacRender(){
+  renderCards(document.getElementById("bacBankerCards"), bac.banker, false);
+  renderCards(document.getElementById("bacPlayerCards"), bac.player, false);
+  document.getElementById("bacBankerVal").textContent = bac.banker.length ? ("Total: " + bacVal(bac.banker)) : "";
+  document.getElementById("bacPlayerVal").textContent = bac.player.length ? ("Total: " + bacVal(bac.player)) : "";
+  document.getElementById("bacBetAmt").textContent = fmt(bac.phase === "betting" ? bac.bet : bac.wager);
+  document.getElementById("bacBetRow").style.opacity = bac.phase === "betting" ? "1" : ".45";
+  document.getElementById("bacDealControls").style.display = bac.phase === "betting" ? "flex" : "none";
+  document.getElementById("bacAgainControls").style.display = bac.phase === "done" ? "flex" : "none";
+  document.querySelectorAll("#bacSeg [data-side]").forEach(function(b){
+    b.classList.toggle("sel", b.getAttribute("data-side") === bac.side);
+    b.disabled = bac.phase !== "betting";
+  });
+  var road = document.getElementById("bacRoad"); road.innerHTML = "";
+  bac.road.slice(-28).forEach(function(r){
+    var d = document.createElement("span");
+    d.className = "road-dot " + r;
+    d.textContent = r === "p" ? "P" : (r === "b" ? "B" : "T");
+    road.appendChild(d);
+  });
+}
+document.querySelectorAll("#bacSeg [data-side]").forEach(function(b){
+  b.addEventListener("click", function(){
+    if (bac.phase !== "betting") return;
+    bac.side = b.getAttribute("data-side"); bacRender();
+  });
+});
+document.querySelectorAll("[data-bbet]").forEach(function(b){
+  b.addEventListener("click", function(){
+    if (bac.phase !== "betting") return;
+    document.querySelectorAll("[data-bbet]").forEach(function(x){ x.classList.remove("sel"); });
+    b.classList.add("sel"); bac.bet = parseInt(b.getAttribute("data-bbet"), 10); sfx("chips");
+    document.getElementById("bacBetAmt").textContent = fmt(bac.bet);
+  });
+});
+document.getElementById("bacDealBtn").addEventListener("click", function(){
+  if (bac.phase !== "betting") return;
+  if (wallet < bac.bet){ bacMsg("Not enough chips — tap “+ 1,000 free” up top."); return; }
+  if (bac.deck.length < 60) bac.deck = makeDeck(6);
+  wallet -= bac.bet; bac.wager = bac.bet; renderWallet();
+  bac.player = [bac.deck.pop(), bac.deck.pop()];
+  bac.banker = [bac.deck.pop(), bac.deck.pop()];
+  bac.phase = "dealt";
+  sfx("shuffle"); sfxSeq("deal", 2, 140, 420);
+  bacRender();
+  bacMsg("No more bets…");
+  setTimeout(bacResolve, 850);
+});
+function bacResolve(){
+  var pv = bacVal(bac.player), bv = bacVal(bac.banker);
+  var natural = pv >= 8 || bv >= 8;
+  if (!natural){
+    var pThird = null;
+    if (pv <= 5){ pThird = bac.deck.pop(); bac.player.push(pThird); pv = bacVal(bac.player); }
+    if (pThird === null){
+      if (bv <= 5){ bac.banker.push(bac.deck.pop()); }
+    } else {
+      var t = bacPoint(pThird), draw = false;
+      if (bv <= 2) draw = true;
+      else if (bv === 3 && t !== 8) draw = true;
+      else if (bv === 4 && t >= 2 && t <= 7) draw = true;
+      else if (bv === 5 && t >= 4 && t <= 7) draw = true;
+      else if (bv === 6 && (t === 6 || t === 7)) draw = true;
+      if (draw) bac.banker.push(bac.deck.pop());
+    }
+    bv = bacVal(bac.banker);
+  }
+  var winner = pv > bv ? "player" : (bv > pv ? "banker" : "tie");
+  bac.road.push(winner === "player" ? "p" : (winner === "banker" ? "b" : "t"));
+  var sideName = bac.side === "player" ? "Player" : (bac.side === "banker" ? "Banker" : "Tie");
+  var winName = winner === "player" ? "Player" : (winner === "banker" ? "Banker" : "Tie");
+  var score = pv + " – " + bv + (natural ? " · Natural" : "");
+  if (bac.side === winner){
+    var profit = bac.side === "banker" ? Math.floor(bac.wager * 0.95) : (bac.side === "tie" ? bac.wager * 8 : bac.wager);
+    wallet += bac.wager + profit; sfx("win");
+    bacMsg(winName + " wins, " + score + ". Your " + sideName + " bet pays " + fmt(profit) + ".");
+  } else if (winner === "tie"){
+    wallet += bac.wager;
+    bacMsg("Tie, " + score + ". Player and Banker bets push — yours is returned.");
+  } else {
+    bacMsg(winName + " wins, " + score + ". Your " + sideName + " bet loses " + fmt(bac.wager) + ".");
+  }
+  bac.phase = "done";
+  renderWallet(); bacRender();
+}
+document.getElementById("bacAgainBtn").addEventListener("click", function(){
+  bac.phase = "betting"; bac.player = []; bac.banker = []; bac.wager = 0;
+  bacRender(); bacMsg("Pick a side, place your bet, then deal.");
+});
+bacRender();
+
+/* ================= GIN RUMMY ================= */
+function combos(arr, k){
+  var out = [];
+  (function rec(start, cur){
+    if (cur.length === k){ out.push(cur.slice()); return; }
+    for (var i = start; i < arr.length; i++){ cur.push(arr[i]); rec(i + 1, cur); cur.pop(); }
+  })(0, []);
+  return out;
+}
+function ginCardVal(c){ return Math.min(c.val, 10); }
+function ginAllMelds(cards){
+  var melds = [];
+  var byRank = {}, bySuit = {};
+  cards.forEach(function(c, idx){
+    (byRank[c.val] = byRank[c.val] || []).push(idx);
+    (bySuit[c.suit] = bySuit[c.suit] || []).push(idx);
+  });
+  Object.keys(byRank).forEach(function(r){
+    var a = byRank[r];
+    if (a.length >= 3){ combos(a, 3).forEach(function(m){ melds.push(m); }); if (a.length === 4) melds.push(a.slice()); }
+  });
+  Object.keys(bySuit).forEach(function(s){
+    var a = bySuit[s].slice().sort(function(x, y){ return cards[x].val - cards[y].val; });
+    var seqs = [], cur = [a[0]];
+    for (var k = 1; k < a.length; k++){
+      if (cards[a[k]].val === cards[a[k - 1]].val + 1) cur.push(a[k]);
+      else { seqs.push(cur); cur = [a[k]]; }
+    }
+    seqs.push(cur);
+    seqs.forEach(function(seq){
+      if (seq.length >= 3) for (var st = 0; st < seq.length; st++) for (var en = st + 3; en <= seq.length; en++) melds.push(seq.slice(st, en));
+    });
+  });
+  return melds;
+}
+function ginBest(cards){
+  var n = cards.length, melds = ginAllMelds(cards), memo = {};
+  var meldMasks = melds.map(function(m){ var mm = 0; m.forEach(function(i){ mm |= (1 << i); }); return mm; });
+  var full = (1 << n) - 1;
+  function solve(mask){
+    if (mask === full) return 0;
+    if (memo[mask] !== undefined) return memo[mask];
+    var i = 0; while ((mask >> i) & 1) i++;
+    var best = ginCardVal(cards[i]) + solve(mask | (1 << i));
+    for (var k = 0; k < melds.length; k++){
+      if (melds[k].indexOf(i) >= 0 && (meldMasks[k] & mask) === 0){
+        var v = solve(mask | meldMasks[k]);
+        if (v < best) best = v;
+      }
+    }
+    memo[mask] = best; return best;
+  }
+  var dw = solve(0);
+  var mask = 0, chosen = [], dead = [];
+  while (mask !== full){
+    var i = 0; while ((mask >> i) & 1) i++;
+    var cur = solve(mask), placed = false;
+    for (var k = 0; k < melds.length; k++){
+      if (melds[k].indexOf(i) >= 0 && (meldMasks[k] & mask) === 0 && solve(mask | meldMasks[k]) === cur){
+        chosen.push(melds[k]); mask |= meldMasks[k]; placed = true; break;
+      }
+    }
+    if (!placed){ dead.push(i); mask |= (1 << i); }
+  }
+  return {
+    dw: dw,
+    melds: chosen.map(function(m){ return m.map(function(i){ return cards[i]; }); }),
+    dead: dead.map(function(i){ return cards[i]; })
+  };
+}
+function ginPostDiscard(hand, excludeCard){
+  var best = null;
+  hand.forEach(function(c){
+    if (excludeCard && c === excludeCard) return;
+    var rest = hand.filter(function(x){ return x !== c; });
+    var dw = ginBest(rest).dw;
+    if (!best || dw < best.dw || (dw === best.dw && ginCardVal(c) > ginCardVal(best.card))) best = { dw: dw, card: c };
+  });
+  return best;
+}
+function ginLayoff(deadCards, melds){
+  var ms = melds.map(function(m){ return m.slice(); });
+  return deadCards.filter(function(c){
+    for (var k = 0; k < ms.length; k++){
+      var m = ms[k];
+      var isSet = m.every(function(x){ return x.val === m[0].val; });
+      if (isSet && c.val === m[0].val && m.length < 4){ m.push(c); return false; }
+      if (!isSet && c.suit === m[0].suit){
+        var vals = m.map(function(x){ return x.val; });
+        if (c.val === Math.min.apply(null, vals) - 1 || c.val === Math.max.apply(null, vals) + 1){ m.push(c); return false; }
+      }
+    }
+    return true;
+  });
+}
+function ginNewMatch(){
+  return { deck:[], discard:[], hands:[[],[]], turn:0, phase:"idle", started:false, roundOver:false, matchOver:false, knocking:null, scores:[0,0], round:1, busy:false, drewFromDiscard:null, aiStatus:"" };
+}
+var gin = ginNewMatch();
+function ginName(i){ return i === 0 ? "You" : "Ava"; }
+function ginMsg(t){ document.getElementById("ginMsg").textContent = t; }
+function ginSort(pi){
+  var b = ginBest(gin.hands[pi]), ordered = [];
+  b.melds.forEach(function(m){ m.forEach(function(c){ ordered.push(c); }); });
+  b.dead.slice().sort(function(a, b2){ return ginCardVal(b2) - ginCardVal(a); }).forEach(function(c){ ordered.push(c); });
+  gin.hands[pi] = ordered;
+}
+function ginReshuffle(){
+  if (gin.discard.length > 1){
+    var top = gin.discard.pop();
+    gin.deck = shuffle(gin.discard);
+    gin.discard = [top];
+  }
+}
+function ginRender(){
+  document.getElementById("ginScore").innerHTML = "You <b>" + gin.scores[0] + "</b> · Ava <b>" + gin.scores[1] + "</b>" + (gin.started ? " · Round " + gin.round : "") + " · First to 100";
+  document.getElementById("ginAiCount").textContent = gin.started ? (gin.hands[1].length + " cards") : "";
+  document.getElementById("ginAiStatus").textContent = gin.aiStatus || "";
+  var backs = document.getElementById("ginAiBacks"); backs.innerHTML = "";
+  if (gin.started && !gin.roundOver) for (var k = 0; k < Math.min(gin.hands[1].length, 14); k++){ var s = document.createElement("span"); s.className = "mini-back"; backs.appendChild(s); }
+  var aiCards = document.getElementById("ginAiCards"); aiCards.innerHTML = "";
+  aiCards.style.display = (gin.started && gin.roundOver) ? "flex" : "none";
+  if (gin.started && gin.roundOver) gin.hands[1].forEach(function(c){ aiCards.appendChild(cardEl(c, { small:true })); });
+  document.getElementById("ginAiBox").className = "opp" + (gin.started && !gin.roundOver && gin.turn === 1 ? " turn" : "");
+  var myDraw = gin.started && !gin.roundOver && gin.turn === 0 && gin.phase === "draw" && !gin.busy;
+  var stockBtn = document.getElementById("ginStockBtn"); stockBtn.innerHTML = "";
+  if (gin.deck.length) stockBtn.appendChild(backEl());
+  else { var es = document.createElement("div"); es.className = "sol-slot"; es.textContent = "0"; stockBtn.appendChild(es); }
+  stockBtn.className = "pile-btn" + (myDraw ? " glow" : "");
+  stockBtn.disabled = !myDraw;
+  document.getElementById("ginStockCount").textContent = gin.started ? (gin.deck.length + " in stock") : "";
+  var discBtn = document.getElementById("ginDiscardBtn"); discBtn.innerHTML = "";
+  if (gin.discard.length) discBtn.appendChild(cardEl(gin.discard[gin.discard.length - 1]));
+  else { var ds = document.createElement("div"); ds.className = "sol-slot"; discBtn.appendChild(ds); }
+  discBtn.className = "pile-btn" + (myDraw && gin.discard.length ? " glow" : "");
+  discBtn.disabled = !myDraw || !gin.discard.length;
+  var myDiscard = gin.started && !gin.roundOver && gin.turn === 0 && gin.phase === "discard" && !gin.busy;
+  var post = myDiscard ? ginPostDiscard(gin.hands[0], gin.drewFromDiscard) : null;
+  var best = gin.started && gin.hands[0].length ? ginBest(gin.hands[0]) : null;
+  var meldSet = {};
+  if (best) best.melds.forEach(function(m){ m.forEach(function(c){ meldSet[c.suit + "-" + c.val] = true; }); });
+  var hand = document.getElementById("ginHand"); hand.innerHTML = "";
+  gin.hands[0].forEach(function(c, idx){
+    var b = document.createElement("button");
+    b.className = "card-btn" + (gin.drewFromDiscard === c ? " blocked" : "");
+    var el = cardEl(c);
+    if (meldSet[c.suit + "-" + c.val]) el.classList.add("inmeld");
+    b.appendChild(el);
+    b.disabled = !myDiscard || gin.drewFromDiscard === c;
+    if (gin.drewFromDiscard === c) b.title = "You just took this — it can't be discarded this turn";
+    b.addEventListener("click", (function(i){ return function(){ ginDiscardCard(i); }; })(idx));
+    hand.appendChild(b);
+  });
+  var info = document.getElementById("ginInfo");
+  if (!gin.started) info.textContent = "";
+  else if (gin.roundOver) info.textContent = "Round over";
+  else if (myDiscard && post) info.textContent = "Deadwood after best discard: " + post.dw + (gin.knocking ? " · Ending the round" : "");
+  else if (gin.turn === 0 && gin.phase === "draw") info.textContent = "Your draw";
+  else if (gin.turn === 1) info.textContent = "Ava is playing…";
+  else info.textContent = "";
+  document.getElementById("ginStartControls").style.display = gin.started ? "none" : "flex";
+  document.getElementById("ginPlayControls").style.display = gin.started ? "flex" : "none";
+  var knockBtn = document.getElementById("ginKnockBtn"), ginBtn = document.getElementById("ginGinBtn");
+  knockBtn.style.display = (post && post.dw > 0 && post.dw <= 10) ? "" : "none";
+  knockBtn.className = gin.knocking === "knock" ? "btn gold" : "btn";
+  knockBtn.textContent = gin.knocking === "knock" ? "Knocking — discard to finish" : "Knock";
+  ginBtn.style.display = (post && post.dw === 0) ? "" : "none";
+  document.getElementById("ginNextBtn").style.display = (gin.roundOver && !gin.matchOver) ? "" : "none";
+  document.getElementById("ginNewMatchBtn").style.display = gin.matchOver ? "" : "none";
+}
+function ginDealRound(){
+  gin.deck = makeDeck(1); gin.discard = []; gin.hands = [[], []];
+  gin.roundOver = false; gin.matchOver = false; gin.knocking = null; gin.phase = "draw"; gin.started = true;
+  gin.drewFromDiscard = null; gin.aiStatus = ""; gin.busy = false;
+  document.getElementById("ginBanner").textContent = "";
+  for (var r = 0; r < 10; r++){ gin.hands[0].push(gin.deck.pop()); gin.hands[1].push(gin.deck.pop()); }
+  gin.discard.push(gin.deck.pop());
+  gin.turn = gin.round % 2 === 1 ? 0 : 1;
+  ginSort(0); ginSort(1);
+  sfx("shuffle"); sfxSeq("deal", 3, 110, 400);
+  ginRender();
+  if (gin.turn === 1){ ginMsg("Round " + gin.round + " — Ava starts."); ginStep(); }
+  else ginMsg("Round " + gin.round + " — draw from the stock or take the discard.");
+}
+function ginDraw(source){
+  if (!gin.started || gin.roundOver || gin.turn !== 0 || gin.phase !== "draw" || gin.busy) return;
+  if (source === "stock"){
+    if (!gin.deck.length){ ginReshuffle(); }
+    if (!gin.deck.length){ ginDrawOut(); return; }
+    gin.hands[0].push(gin.deck.pop()); gin.drewFromDiscard = null; sfx("deal");
+  } else {
+    if (!gin.discard.length) return;
+    var c = gin.discard.pop(); gin.hands[0].push(c); gin.drewFromDiscard = c; sfx("snap");
+  }
+  gin.phase = "discard"; ginSort(0); ginRender();
+  var post = ginPostDiscard(gin.hands[0], gin.drewFromDiscard);
+  ginMsg(post && post.dw === 0 ? "That's gin — tap “Gin!”, then discard." : (post && post.dw <= 10 ? "You can knock. Otherwise, tap a card to discard." : "Tap a card to discard."));
+}
+function ginDrawOut(){
+  gin.roundOver = true; gin.phase = "over";
+  document.getElementById("ginBanner").textContent = "Stock ran out — round is a draw.";
+  ginMsg("No points this round.");
+  ginRender();
+}
+function ginDiscardCard(idx){
+  if (!gin.started || gin.roundOver || gin.turn !== 0 || gin.phase !== "discard" || gin.busy) return;
+  var c = gin.hands[0][idx];
+  if (!c || c === gin.drewFromDiscard) return;
+  gin.hands[0].splice(idx, 1); gin.discard.push(c); sfx("snap");
+  gin.drewFromDiscard = null;
+  if (gin.knocking){ ginScoreRound(0); return; }
+  gin.turn = 1; gin.phase = "draw"; ginRender();
+  ginMsg("Ava's turn.");
+  ginStep();
+}
+function ginStep(){
+  if (!gin.started || gin.roundOver || gin.turn !== 1) return;
+  gin.busy = true; ginRender();
+  setTimeout(function(){
+    gin.busy = false;
+    if (!gin.started || gin.roundOver || gin.turn !== 1) return;
+    ginAiTurn();
+  }, 900);
+}
+function ginAiTurn(){
+  var hand = gin.hands[1];
+  var dwNow = ginBest(hand).dw;
+  var top = gin.discard[gin.discard.length - 1];
+  var tookDiscard = false, drawn = null;
+  if (top){
+    var postTake = ginPostDiscard(hand.concat([top]), top);
+    if (postTake && postTake.dw < dwNow){ hand.push(gin.discard.pop()); drawn = top; tookDiscard = true; }
+  }
+  if (!tookDiscard){
+    if (!gin.deck.length) ginReshuffle();
+    if (gin.deck.length){ drawn = gin.deck.pop(); hand.push(drawn); }
+    else if (top){ hand.push(gin.discard.pop()); drawn = top; tookDiscard = true; }
+    else { ginDrawOut(); return; }
+  }
+  gin.aiStatus = tookDiscard ? "Ava takes the discard." : "Ava draws from the stock.";
+  ginSort(1);
+  var post = ginPostDiscard(gin.hands[1], tookDiscard ? drawn : null);
+  if (!post){ ginDrawOut(); return; }
+  var will = post.dw === 0 ? "gin" : (post.dw <= 5 || (post.dw <= 7 && Math.random() < 0.45)) ? "knock" : null;
+  var idx = gin.hands[1].indexOf(post.card);
+  var dc = gin.hands[1].splice(idx, 1)[0];
+  gin.discard.push(dc); sfx("snap");
+  if (will){
+    gin.knocking = will;
+    gin.aiStatus = will === "gin" ? "Ava goes gin." : "Ava knocks.";
+    ginScoreRound(1); return;
+  }
+  gin.turn = 0; gin.phase = "draw"; ginRender();
+  ginMsg("Your turn — draw a card.");
+}
+function ginScoreRound(knocker){
+  gin.roundOver = true; gin.phase = "over";
+  var def = 1 - knocker;
+  var kb = ginBest(gin.hands[knocker]);
+  var db = ginBest(gin.hands[def]);
+  var defDW = db.dw, laid = 0;
+  if (gin.knocking !== "gin"){
+    var rest = ginLayoff(db.dead, kb.melds);
+    laid = db.dead.length - rest.length;
+    defDW = rest.reduce(function(a, c){ return a + ginCardVal(c); }, 0);
+  }
+  var kDW = kb.dw, points = 0, winnerIdx, headline;
+  if (gin.knocking === "gin"){
+    points = defDW + 25; winnerIdx = knocker;
+    headline = (knocker === 0 ? "Gin! You score " : "Ava goes gin and scores ") + points + ".";
+  } else if (defDW > kDW){
+    points = defDW - kDW; winnerIdx = knocker;
+    headline = (knocker === 0 ? "You knock and score " : "Ava knocks and scores ") + points + ".";
+  } else {
+    points = (kDW - defDW) + 25; winnerIdx = def;
+    headline = "Undercut — " + (def === 0 ? "you score " : "Ava scores ") + points + ".";
+  }
+  gin.scores[winnerIdx] += points;
+  var detail = "Deadwood — You: " + (knocker === 0 ? kDW : defDW) + " · Ava: " + (knocker === 1 ? kDW : defDW) +
+    (laid ? " · " + ginName(def) + " laid off " + laid + (laid === 1 ? " card" : " cards") + " on the melds" : "") + ".";
+  gin.aiStatus = "";
+  if (gin.scores[0] >= 100 || gin.scores[1] >= 100){
+    gin.matchOver = true;
+    var mw = gin.scores[0] === gin.scores[1] ? winnerIdx : (gin.scores[0] > gin.scores[1] ? 0 : 1);
+    document.getElementById("ginBanner").textContent = (mw === 0 ? "You win the match " : "Ava wins the match ") + gin.scores[0] + " – " + gin.scores[1] + ".";
+    if (mw === 0) sfx("win");
+    ginMsg(headline + " " + detail);
+  } else {
+    document.getElementById("ginBanner").textContent = headline;
+    ginMsg(detail + " Tap “Next round” to keep playing.");
+    if (winnerIdx === 0) sfx("win");
+  }
+  gin.knocking = null;
+  ginRender();
+}
+document.getElementById("ginStartBtn").addEventListener("click", function(){ gin = ginNewMatch(); ginDealRound(); });
+document.getElementById("ginNewMatchBtn").addEventListener("click", function(){ gin = ginNewMatch(); ginDealRound(); });
+document.getElementById("ginNextBtn").addEventListener("click", function(){ gin.round++; ginDealRound(); });
+document.getElementById("ginStockBtn").addEventListener("click", function(){ ginDraw("stock"); });
+document.getElementById("ginDiscardBtn").addEventListener("click", function(){ ginDraw("discard"); });
+document.getElementById("ginKnockBtn").addEventListener("click", function(){
+  if (gin.phase !== "discard" || gin.turn !== 0) return;
+  gin.knocking = gin.knocking === "knock" ? null : "knock";
+  ginRender();
+  ginMsg(gin.knocking === "knock" ? "Knocking — tap your final discard." : "Knock cancelled. Tap a card to discard.");
+});
+document.getElementById("ginGinBtn").addEventListener("click", function(){
+  if (gin.phase !== "discard" || gin.turn !== 0) return;
+  gin.knocking = "gin";
+  ginRender();
+  ginMsg("Gin — tap your final discard.");
+});
+ginRender();
+
+/* ================= SOLITAIRE ================= */
+var sol = null;
+function solDealState(){
+  var d = makeDeck(1);
+  var s = { stock:[], waste:[], foundations:[[],[],[],[]], tableau:[[],[],[],[],[],[],[]], moves:0, sel:null, won:false, history:[] };
+  for (var col = 0; col < 7; col++) for (var k = 0; k <= col; k++) s.tableau[col].push({ c: d.pop(), up: k === col });
+  s.stock = d;
+  return s;
+}
+function solIsRed(c){ return c.suit === 1 || c.suit === 2; }
+function solFoundCount(){ return sol.foundations.reduce(function(a, f){ return a + f.length; }, 0); }
+function solSnapshot(){ return JSON.stringify({ stock:sol.stock, waste:sol.waste, foundations:sol.foundations, tableau:sol.tableau, moves:sol.moves }); }
+function solPushHist(){ sol.history.push(solSnapshot()); if (sol.history.length > 120) sol.history.shift(); }
+function solAfterAction(msg){
+  sol.tableau.forEach(function(t){ if (t.length && !t[t.length - 1].up) t[t.length - 1].up = true; });
+  sol.sel = null;
+  if (solFoundCount() === 52 && !sol.won){
+    sol.won = true;
+    document.getElementById("solBanner").textContent = "You win — every card home.";
+    sfx("win");
+    solRender("Solved in " + sol.moves + " moves.");
+    return;
+  }
+  solRender(msg);
+}
+function solSelCards(){
+  if (!sol.sel) return null;
+  if (sol.sel.type === "waste") return sol.waste.length ? [sol.waste[sol.waste.length - 1]] : null;
+  if (sol.sel.type === "foundation"){ var f = sol.foundations[sol.sel.suit]; return f.length ? [f[f.length - 1]] : null; }
+  var t = sol.tableau[sol.sel.col];
+  if (!t || sol.sel.idx >= t.length) return null;
+  return t.slice(sol.sel.idx).map(function(w){ return w.c; });
+}
+function solRemoveSel(){
+  if (sol.sel.type === "waste") sol.waste.pop();
+  else if (sol.sel.type === "foundation") sol.foundations[sol.sel.suit].pop();
+  else sol.tableau[sol.sel.col].splice(sol.sel.idx);
+}
+function solCanTableau(cards, col){
+  if (sol.sel && sol.sel.type === "tableau" && sol.sel.col === col) return false;
+  var t = sol.tableau[col], bottom = cards[0];
+  if (!t.length) return bottom.val === 13;
+  var top = t[t.length - 1];
+  if (!top.up) return false;
+  return solIsRed(top.c) !== solIsRed(bottom) && top.c.val === bottom.val + 1;
+}
+function solCanFoundation(card){
+  var f = sol.foundations[card.suit];
+  if (!f.length) return card.val === 1;
+  return f[f.length - 1].val + 1 === card.val;
+}
+function solDoMoveTableau(col){
+  var cards = solSelCards();
+  if (!cards || !cards.length || !solCanTableau(cards, col)) return false;
+  solPushHist(); solRemoveSel();
+  cards.forEach(function(c){ sol.tableau[col].push({ c: c, up: true }); });
+  sol.moves++; sfx("snap"); solAfterAction();
+  return true;
+}
+function solDoMoveFoundation(){
+  var cards = solSelCards();
+  if (!cards || cards.length !== 1 || !solCanFoundation(cards[0])) return false;
+  solPushHist(); solRemoveSel();
+  sol.foundations[cards[0].suit].push(cards[0]);
+  sol.moves++; sfx("snap"); solAfterAction();
+  return true;
+}
+function solClickStock(){
+  if (!sol || sol.won) return;
+  if (!sol.stock.length && !sol.waste.length) return;
+  solPushHist();
+  if (sol.stock.length){ sol.waste.push(sol.stock.pop()); sfx("deal"); }
+  else { sol.stock = sol.waste.slice().reverse(); sol.waste = []; sfx("shuffle"); }
+  sol.moves++; solAfterAction();
+}
+function solClickWaste(){
+  if (!sol || sol.won || !sol.waste.length) return;
+  if (sol.sel && sol.sel.type === "waste"){ sol.sel = null; solRender(); return; }
+  sol.sel = { type:"waste" }; sfx("deal", .3); solRender();
+}
+function solClickFoundation(suit){
+  if (!sol || sol.won) return;
+  if (sol.sel && sol.sel.type !== "foundation" && solDoMoveFoundation()) return;
+  var f = sol.foundations[suit];
+  if (!f.length){ sol.sel = null; solRender(); return; }
+  if (sol.sel && sol.sel.type === "foundation" && sol.sel.suit === suit) sol.sel = null;
+  else sol.sel = { type:"foundation", suit:suit };
+  solRender();
+}
+function solClickTableau(col, idx){
+  if (!sol || sol.won) return;
+  var t = sol.tableau[col];
+  if (sol.sel && !(sol.sel.type === "tableau" && sol.sel.col === col) && solDoMoveTableau(col)) return;
+  if (!t.length){ sol.sel = null; solRender(); return; }
+  var w = t[idx];
+  if (!w) return;
+  if (!w.up){
+    if (idx === t.length - 1){ solPushHist(); w.up = true; sol.moves++; sfx("deal"); solAfterAction(); }
+    return;
+  }
+  if (sol.sel && sol.sel.type === "tableau" && sol.sel.col === col && sol.sel.idx === idx){ sol.sel = null; solRender(); return; }
+  sol.sel = { type:"tableau", col:col, idx:idx }; sfx("deal", .3); solRender();
+}
+function solRender(msg){
+  if (typeof msg === "string") document.getElementById("solMsg").textContent = msg;
+  var sb = document.getElementById("solStockBtn"); sb.innerHTML = "";
+  if (sol.stock.length) sb.appendChild(backEl());
+  else { var rs = document.createElement("div"); rs.className = "sol-slot"; rs.textContent = "↻"; sb.appendChild(rs); }
+  var wb = document.getElementById("solWaste"); wb.innerHTML = "";
+  if (sol.waste.length){
+    var wc = cardEl(sol.waste[sol.waste.length - 1]);
+    if (sol.sel && sol.sel.type === "waste") wc.style.boxShadow = "0 0 0 2px var(--brass), 0 14px 22px -9px rgba(0,0,0,.65)";
+    wb.appendChild(wc);
+  } else { var ws = document.createElement("div"); ws.className = "sol-slot"; wb.appendChild(ws); }
+  var fc = document.getElementById("solFoundations"); fc.innerHTML = "";
+  sol.foundations.forEach(function(f, suit){
+    var b = document.createElement("button");
+    b.className = "sol-pile"; b.setAttribute("aria-label", "Foundation " + SUITS[suit]);
+    if (f.length){
+      var el = cardEl(f[f.length - 1]);
+      if (sol.sel && sol.sel.type === "foundation" && sol.sel.suit === suit) el.style.boxShadow = "0 0 0 2px var(--brass), 0 14px 22px -9px rgba(0,0,0,.65)";
+      b.appendChild(el);
+    } else {
+      var sl = document.createElement("div");
+      sl.className = "sol-slot" + (solIsRed({ suit:suit }) ? " red" : "");
+      sl.textContent = SUITS[suit];
+      b.appendChild(sl);
+    }
+    b.addEventListener("click", (function(s2){ return function(){ solClickFoundation(s2); }; })(suit));
+    fc.appendChild(b);
+  });
+  var tb = document.getElementById("solTableau"); tb.innerHTML = "";
+  sol.tableau.forEach(function(t, col){
+    var cd = document.createElement("div"); cd.className = "sol-col";
+    if (!t.length){
+      var es = document.createElement("button");
+      es.className = "sol-slot"; es.setAttribute("aria-label", "Empty column — Kings only");
+      es.addEventListener("click", (function(c2){ return function(){ solClickTableau(c2, 0); }; })(col));
+      cd.appendChild(es);
+    }
+    t.forEach(function(w, idx){
+      var wrap = document.createElement("div");
+      wrap.className = "sol-card" + (w.up ? "" : " down") + (sol.sel && sol.sel.type === "tableau" && sol.sel.col === col && idx >= sol.sel.idx ? " sel" : "");
+      wrap.appendChild(w.up ? cardEl(w.c) : backEl());
+      wrap.addEventListener("click", (function(c2, i2){ return function(){ solClickTableau(c2, i2); }; })(col, idx));
+      if (w.up && idx === t.length - 1){
+        wrap.addEventListener("dblclick", (function(c2, i2){ return function(){
+          sol.sel = { type:"tableau", col:c2, idx:i2 };
+          if (!solDoMoveFoundation()) solRender();
+        }; })(col, idx));
+      }
+      cd.appendChild(wrap);
+    });
+    tb.appendChild(cd);
+  });
+  document.getElementById("solStats").textContent = "Moves " + sol.moves + " · Stock " + sol.stock.length + " · Home " + solFoundCount() + " / 52";
+  document.getElementById("solUndoBtn").disabled = !sol.history.length;
+  var canAuto = !sol.won && !sol.stock.length && sol.tableau.every(function(t){ return t.every(function(w){ return w.up; }); });
+  document.getElementById("solAutoBtn").style.display = canAuto ? "" : "none";
+}
+document.getElementById("solStockBtn").addEventListener("click", solClickStock);
+document.getElementById("solWaste").addEventListener("click", solClickWaste);
+document.getElementById("solWaste").addEventListener("dblclick", function(){
+  if (!sol || !sol.waste.length) return;
+  sol.sel = { type:"waste" };
+  if (!solDoMoveFoundation()) solRender();
+});
+document.getElementById("solNewBtn").addEventListener("click", function(){
+  sol = solDealState();
+  document.getElementById("solBanner").textContent = "";
+  sfx("shuffle"); sfxSeq("deal", 3, 90, 350);
+  solRender("New game dealt. Build down in alternating colours; Aces start the foundations.");
+});
+document.getElementById("solUndoBtn").addEventListener("click", function(){
+  if (!sol || !sol.history.length) return;
+  var s = JSON.parse(sol.history.pop());
+  sol.stock = s.stock; sol.waste = s.waste; sol.foundations = s.foundations; sol.tableau = s.tableau; sol.moves = s.moves;
+  sol.sel = null; sol.won = false;
+  document.getElementById("solBanner").textContent = "";
+  sfx("deal", .35);
+  solRender("Undone.");
+});
+document.getElementById("solAutoBtn").addEventListener("click", function(){
+  var timer = setInterval(function(){
+    var moved = false;
+    if (sol.waste.length && solCanFoundation(sol.waste[sol.waste.length - 1])){ sol.sel = { type:"waste" }; moved = solDoMoveFoundation(); }
+    if (!moved){
+      for (var col = 0; col < 7 && !moved; col++){
+        var t = sol.tableau[col];
+        if (t.length && t[t.length - 1].up && solCanFoundation(t[t.length - 1].c)){
+          sol.sel = { type:"tableau", col:col, idx:t.length - 1 };
+          moved = solDoMoveFoundation();
+        }
+      }
+    }
+    if (!moved || sol.won) clearInterval(timer);
+  }, 130);
+});
+sol = solDealState();
+solRender();
+</script>
+
 </body>
 </html>
